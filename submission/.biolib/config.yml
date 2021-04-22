@@ -1,0 +1,21 @@
+biolib_version: 2
+modules:
+    main:
+        image: 'local-docker://cbh2021:latest'
+        command: ''
+        working_directory: /home/biolib/
+        input_files:
+            - COPY / /home/biolib/
+        output_files:
+            - COPY /home/biolib/predictions.csv /
+        source_files:
+            - COPY / /home/biolib/
+
+arguments:
+    -
+        default_value: 'input.zip'
+        description: 'A zip file containing the .csv.gz files to run prediction on:'
+        key: '--input-zip'
+        key_value_separator: ' '
+        required: true
+        type: file
