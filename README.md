@@ -18,7 +18,7 @@ guide [here](https://www.notion.so/Benchmarking-System-46bfaeea0119490cb611688b4
 ## Training
 
 This repository contains a [baseline model](src/model.py) and a [training script](src/train.py) that trains the baseline
-model and saves it to a pickle file as [src/model.pickle](src/model.py). You can run the training script
+model and saves it to a pickle file as [src/model.pickle](src/model.pickle). You can run the training script
 with `python3 src/train.py`
 
 ### Dataset
