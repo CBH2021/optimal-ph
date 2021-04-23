@@ -1,33 +1,28 @@
 import pandas as pd
-import numpy as np
 import argparse
+from sklearn.metrics import mean_squared_error
+from scipy.stats import spearmanr
 
 
 def benchmark(predictions_file, actuals_file):
-    predictions = pd.read_csv(predictions_file).to_dict(orient="records")
-    actuals = pd.read_csv(actuals_file).to_dict(orient="records")
+    predictions_array = pd.read_csv(predictions_file)['prediction'].to_numpy()
+    actuals_array = pd.read_csv(actuals_file)['actual'].to_numpy()
 
-    predictions_dict = {}
-    for prediction in predictions:
-        predictions_dict[prediction["name"]] = prediction["prediction"]
+    mse = mean_squared_error(y_true=actuals_array, y_pred=predictions_array)
+    correlation, pvalue = spearmanr(a=actuals_array, b=predictions_array)
 
-    actuals_dict = {}
-    for actual in actuals:
-        actuals_dict[actual["name"]] = actual["actual"]
-
-    results = []
-    for (name, actual) in actuals_dict.items():
-        results.append(1 if predictions_dict[name] == actual else 0)
-
-    accuracy = np.array(results).mean()
-    result = {}
-    result["accuracy"] = accuracy
-    return result
+    return {
+        'mean_squared_error': mse,
+        'spearman_rank': {
+            'correlation':  correlation,
+            'pvalue': pvalue,
+        }
+    }
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--predictions')
-    parser.add_argument('--actual')
+    parser.add_argument('--predictions', default='predictions.csv')
+    parser.add_argument('--actual', default='actual.csv')
     args = parser.parse_args()
-    print("Benchmarks:", benchmark(args.predictions, args.actual))
+    print('Benchmarks: ', benchmark(args.predictions, args.actual))
