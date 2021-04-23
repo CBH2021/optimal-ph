@@ -18,18 +18,15 @@ at [here](https://www.notion.so/Benchmarking-System-46bfaeea0119490cb611688b493c
 ## Training
 
 This repository contains a [baseline model](src/model.py) and a [training script](src/train.py) that trains the baseline
-model and saves it to a pickle file as [src/model.pickle](src/model.py). You can run the training script with:
-
-```bash
-python3 src/train.py
-```
+model and saves it to a pickle file as [src/model.pickle](src/model.py). You can run the training script
+with `python3 src/train.py`
 
 ### Dataset
 
 The dataset for training can be found [here](data/train_set.csv). It contains 105,000 primary protein
 sequences (`sequence`), and the growth pH values of their hosts organisms (`mean_growth_PH`).
 
-## [Predictions]
+## Predictions
 
 The goal is to predict `mean_growth_PH`. At prediction time you are given a csv file with the single column `sequence`
 like:
@@ -51,3 +48,5 @@ prediction
 5.0
 3.5
 ```
+
+You can run the prediction script with `python3 src/predict.py --input_csv submission/input.csv`
