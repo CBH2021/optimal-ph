@@ -7,15 +7,14 @@ parser.add_argument('--input_csv', default='input.csv')
 args = parser.parse_args()
 
 # Config
-model_file_path = 'model.pickle'
-output_file_path = 'predictions.csv'
+output_file_path = 'test/predictions.csv'
 
 # Load input.csv
 with open(args.input_csv) as input_csv:
     df = pd.read_csv(input_csv)
 
 # Run predictions
-y_predictions = BaselineModel().predict(df, model_file_path)
+y_predictions = BaselineModel(model_file_path='src/model.pickle').predict(df)
 
 # Save predictions to file
 df_predictions = pd.DataFrame({'prediction': y_predictions})
