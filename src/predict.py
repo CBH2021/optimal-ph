@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 # Config
 model_to_use = baseline_model
-output_file_path = '../test/predictions.csv'
+output_file_path = 'predictions.csv'
 
 # Load input.csv
 with open(args.input_csv) as input_csv:
@@ -24,3 +24,5 @@ for index, row in data_frame.iterrows():
 # Save predictions to file
 df_predictions = pd.DataFrame({'prediction': Y_predictions})
 df_predictions.to_csv(output_file_path, index=False)
+
+print(f'{len(Y_predictions)} predictions saved to a csv file')

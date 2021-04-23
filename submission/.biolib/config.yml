@@ -13,9 +13,9 @@ modules:
 
 arguments:
     -
-        default_value: 'input.zip'
-        description: 'A zip file containing the .csv.gz files to run prediction on:'
-        key: '--input-zip'
+        default_value: 'input.csv'
+        description: 'The csv file to run prediction on:'
+        key: '--input_csv'
         key_value_separator: ' '
         required: true
         type: file
