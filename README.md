@@ -12,8 +12,8 @@ organisms are provided.
 
 ## Getting Started
 
-To get started ensure to follow the guide
-at [here](https://www.notion.so/Benchmarking-System-46bfaeea0119490cb611688b493c589a).
+To get started ensure to follow the
+guide [here](https://www.notion.so/Benchmarking-System-46bfaeea0119490cb611688b493c589a).
 
 ## Training
 
