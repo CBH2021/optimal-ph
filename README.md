@@ -1,8 +1,8 @@
 # Optimal-pH
 
-The Optimal-pH challenge from [Copenhagen Bioinformatics Hackathon: 2021 Protein Edition](https://biohackathon.dk). The
-scoreboard can be found
-at: [biolib.com/biohackathon/optimal-ph-scoreboard/](https://biolib.com/biohackathon/optimal-ph-scoreboard/)
+The Optimal-pH challenge from [Copenhagen Bioinformatics Hackathon: 2021 Protein Edition](https://biohackathon.dk). 
+
+**Benchmarking scoreboard:** [biolib.com/biohackathon/optimal-ph-scoreboard/](https://biolib.com/biohackathon/optimal-ph-scoreboard/)
 
 ## Challenge Aim
 
